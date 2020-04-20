@@ -157,7 +157,7 @@
 //     function a(){
 //         console.log(d)
 //     }
-    
+
 //     a()
 // }
 
@@ -677,7 +677,7 @@
 //         return this.fname + this.lname
 //     },
 //     set fullname(value){ // setter
-        
+
 //     }
 // }
 
@@ -714,12 +714,337 @@
 
 //-----------------------------------------------------------------cloning object (spread)
 
-var p1 = {
-    name: 'ooo'
-}
+// var p1 = {
+//     name: 'ooo'
+// }
 
-let p2 = { ...p1 }
-console.log(p2)
+// let p2 = { ...p1 }
+// console.log(p2)
+
+//-----------------------------------------------------------------filter & map
+
+// let numbers = [1,2,3,4,5]
+
+// let filtered = numbers.filter(n => {
+//     return n > 2
+// })
+
+// console.log(filtered)
+
+// const items = filtered.map(n => {
+//     return `value: ${n}`
+// })
+
+// console.log(items)
+
+//---------------------------------------------------------------example of closure
+
+// let call = () => {
+//     let secret = 'something';
+//     let reveal = () => {
+//         console.log(secret)
+//     }
+//     reveal()
+// }
+
+// // console.log(secret)
+// call()
+
+//----------------------------------START----------------------------------------//
+
+// let something = (function(){
+
+// }())
+
+
+// let hdbch = function(){
+
+// }
+
+// function njcdn(name){
+//     this.name = name;
+// }
+
+// // let person = new class(){
+
+// // }
+
+// class djvj extends  {
+//     constructor(){
+//         this.name = {}
+//     }
+// }
+
+// function* example(){
+//     yield 'something';
+//     yield 'again';
+//     yield 'thrice';
+// }
+
+// for (const val of example()){
+//     console.log(val)
+// }
+
+// console.log(a)
+// var a = 'abc'
+// console.log(a)
+// let y = 11
+// delete y;
+
+
+// var output = (function(x) {
+//     delete x;
+//     return x;
+// })(0);
+
+// console.log(output);
+
+// var trees = ["redwood", "bay", "cedar", "oak", "maple"];
+// delete trees[3];
+
+// var foo = function bar() { return 'gh'; };
+
+// foo(); // Call foo function here, It will give an error
+// var foo = function () {
+//     console.log("Hi I am inside Foo");
+// };
+
+// bar(); // Call bar function here, It will not give an Error
+// function bar() {
+//     console.log("Hi I am inside Foo2");
+// }
+
+// var counterArray = {
+//     A: 3,
+//     B: 4
+// };
+// counterArray["C"] = 1;
+// counterArray.D = 2;
+// Object.keys(counterArray).length
+
+// var arr = [10, 32, 65, 2];
+// for (var i = 0; i < arr.length; i++) {
+//   setTimeout(function() {
+//     console.log('The index of this number is: ' + i);
+//   }, 3000);
+// }
+
+// var arr = [10, 32, 65, 2];
+// for (var i = 0; i < arr.length; i++) {
+//   setTimeout(function(j) {
+//     return function () {
+//       console.log('The index of this number is: ' + j)
+//     };
+//   }(i), 3000);
+// }
+
+// var arr = [10, 32, 65, 2];
+// arr.forEach(function(i) {
+//   setTimeout(function() {
+//     console.log('The index of this number is: ' + i);
+//   }, 3000);
+// })
+
+// (function () {
+//     'use strict';
+//     var person = {
+//         name: 'John'
+//     };
+//     person.salary = '10000$';
+//     person['country'] = 'USA';
+
+//     Object.defineProperty(person, 'phoneNo', {
+//         value: '8888888888',
+//         enumerable: true
+//     })
+
+//     console.log(Object.keys(person));
+// })();
+
+// var objA = Object.create({
+//     foo: 'foo'
+// });
+
+// (function () {
+//   var array = new Array('a', 'b', 'c', 'd', 'e');
+//   array[10] = 'f';
+//   delete array[10];
+//   console.log(array);
+// }());
+
+//----------------------spread
+
+// let a = [1,2,3,4]
+// let b = [5,6,...a,7,8]
+// console.log(b)
+
+//---------------------rest
+
+// function rest(...z){
+//   console.log(z)
+// }
+
+// rest(1,2,3,4,5)
+
+// function cheer(){
+//   console.log('hi')
+// }
+// cheer()
+
+// let cheers = function(){
+//   console.log('hi')
+// }
+// cheer()
+
+// let values = [1, 2, 3, 4]
+// let double = function (n) {
+//   return n*2;
+// }
+// let doubled = values.map(double)
+
+//------------------------------------------------------------------Class
+
+// class Animal{
+//   constructor(name, age){
+//     this.name= name;
+//     this.age= age
+//   }
+//   hello(){
+//     console.log("Hello")
+//   }
+// }
+
+// let King = new Animal('Rohan', 20)
+// King.hello()
+
+//-----------------------------------------------------------------Class inherit
+
+// class Animal{
+//   constructor(name, age){
+//     this.name= name;
+//     this.age= age
+//   }
+//   hello(){
+//     console.log("Hello")
+//   }
+// }
+
+// class Lion extends Animal{
+//   constructor(name, age, color){
+//     super(name, age);
+//     this.color= color;
+//   }
+// }
+
+// let son = new Lion('Shivam', 22, 'golden')
+// console.log(son)
+
+//--------------------------------------------------------------------Static
+
+// class Calculator{
+//   static multiply(a,b){
+//     return a*b
+//   }
+//   static add(a,b){
+//     return a+b
+//   }
+// }
+
+// let sum = Calculator.add(5,10);
+// console.log(sum)
+
+//-----------------------------------------------------------------prototype
+
+// function Wizard(name, age){
+//   this.name= name;
+//   this.age = age;
+//   this.greet = () => 'Hi '+ this.name
+// }
+
+// Wizard.prototype.petName;
+
+// // Wizard.prototype.petInfo = () =>{ // Arrow function will give undefined
+// //   return 'Pet is an ' + this.petName
+// // }
+
+// Wizard.prototype.petInfo = function(){ // Right result
+//   return 'Pet is an ' + this.petName
+// }
+
+// let wizard1 = new Wizard('harry', 22)
+// wizard1.petName = 'Owl'
+// console.log(wizard1)
+// console.log(wizard1.petInfo())
+
+// let wizard2 = Object.create(wizard1)
+// console.log(wizard2)
+
+// let wizard3 = new wizard1.constructor('manoj', 24)
+// console.log(wizard3)
+
+//-------------------------------------------------------------------Closure using return
+
+// let call = () =>{
+//   let secret = 'My money is in wallet'
+//   let reveal = () =>{
+//     return secret
+//   }
+//   let i= reveal();
+//   return i;
+// }
+
+// let j = call();
+
+//--------------------------------------------------------------------Closure
+
+// let call = () =>{
+//   let secret = 'My money is in wallet'
+//   let reveal = () =>{
+//     console.log(secret)
+//   }
+//   reveal();
+// }
+
+// call();
+
+//-----------------------------------------------------------------function factories
+
+// function suffix(x){
+//   let word = function(y){
+//     return x+y
+//   }
+//   return word
+// }
+
+// let a = suffix('happi')
+// console.log(a)
+// let b = a('ness')
+// console.log(b)
+
+//-----------------------------------------------------------------generators
+
+// function* generate(){
+//   yield 'a';
+//   yield 'b';
+//   yield 'c';
+// }
+
+// let generated = generate()
+// console.log(generated.next())
+// console.log(generated.next().value)
+
+//---------------------------------------------------------------------promise
+
+// let p = new Promise((resolve,reject)=>{
+//   setTimeout(() => resolve('promise resolved'),3000)
+// })
+
+// p.then(response => console.log(response))
+// .catch(error => console.log(error))
+
+
+
+
 
 
 
